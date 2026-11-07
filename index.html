@@ -1,18 +1,900 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Project</title>
-</head>
+        <meta
+            name="description"
+            content="Learn inline icon alignment and CSS Flexbox with interactive examples."
+        />
 
-<body>
-    start
+        <meta name="theme-color" content="#f2f0e7" />
 
-    <script src="./assets/js/main.js"></script>
-</body>
+        <title>009 — Inline. Align.</title>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+
+    <body>
+        <!-- HEADER -->
+        <header class="topbar">
+            <a class="brand" href="#top">
+                <span class="brand-icon">A<span>/</span></span>
+                ALIGNMENT LAB
+            </a>
+
+            <nav>
+                <a href="#lesson">Lesson</a>
+                <a href="#playground">Playground</a>
+                <a href="#recap">Takeaways</a>
+            </nav>
+
+            <a
+                class="index"
+                href="https://freetimezp.github.io/roadmap-web-coding/"
+            >
+                ROADMAP
+                <b>009 / 1000</b>
+            </a>
+        </header>
+
+        <main id="top">
+            <!-- HERO -->
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="eyebrow">
+                        <span>●</span>
+                        HTML + CSS / LAYOUT FUNDAMENTALS
+                    </div>
+
+                    <small>LESSON 009</small>
+
+                    <h1>
+                        Inline.<br />
+                        <em>Align.</em>
+                    </h1>
+
+                    <p>
+                        Small elements. Better alignment. Learn how icons and
+                        text work together, then use Flexbox to create clean,
+                        balanced interfaces.
+                    </p>
+
+                    <a class="button primary" href="#lesson">
+                        START LEARNING <span>↘</span>
+                    </a>
+
+                    <span class="read">◷ &nbsp; 10 MIN READ</span>
+                </div>
+
+                <!-- HERO VISUAL -->
+                <div class="hero-art">
+                    <div class="art-label">FIG. 009 — PERFECTLY PLACED</div>
+
+                    <div class="art-grid"></div>
+
+                    <div class="floating-card card-one">
+                        <span class="mini-icon">✦</span>
+                        <span>Icon</span>
+                    </div>
+
+                    <div class="floating-card card-two">
+                        <span class="mini-dot"></span>
+                        <span>Text aligned</span>
+                    </div>
+
+                    <div class="alignment-demo">
+                        <div class="demo-icon">↗</div>
+                        <div class="demo-text">
+                            <strong>Everything</strong>
+                            <span>in its right place.</span>
+                        </div>
+                        <div class="demo-check">✓</div>
+                    </div>
+
+                    <div class="alignment-line line-one"></div>
+                    <div class="alignment-line line-two"></div>
+
+                    <div class="art-caption">
+                        <span>ALIGNMENT</span>
+                        <span>01 — 09</span>
+                    </div>
+
+                    <div class="art-number">09</div>
+                </div>
+
+                <div class="scroll">
+                    SCROLL TO EXPLORE
+                    <span></span>
+                    01 — 04
+                </div>
+            </section>
+
+            <!-- INTRO -->
+            <section class="intro wrap" id="lesson">
+                <div class="label">01 &nbsp; THE IDEA</div>
+
+                <div>
+                    <h2>
+                        Good alignment<br />
+                        creates <em>clarity.</em>
+                    </h2>
+
+                    <p>
+                        Think about buttons, navigation links, notifications and
+                        labels. They often combine an icon with text. When these
+                        elements don't align properly, even a beautiful
+                        interface can feel unfinished.
+                    </p>
+
+                    <p>
+                        We'll explore how inline formatting works and how
+                        Flexbox gives us precise control over positioning,
+                        spacing and responsive layouts.
+                    </p>
+                </div>
+            </section>
+
+            <!-- LESSON CONTENT -->
+            <section class="lesson wrap">
+                <aside>
+                    <small>IN THIS LESSON</small>
+
+                    <a href="#inline"> 01 <b>Inline elements</b> </a>
+
+                    <a href="#baseline"> 02 <b>Text baseline</b> </a>
+
+                    <a href="#vertical"> 03 <b>Vertical align</b> </a>
+
+                    <a href="#flex"> 04 <b>Flexbox basics</b> </a>
+
+                    <a href="#center"> 05 <b>Align items</b> </a>
+
+                    <a href="#gap"> 06 <b>Gap and spacing</b> </a>
+
+                    <a href="#sizing"> 07 <b>Flex sizing</b> </a>
+
+                    <a href="#responsive"> 08 <b>Responsive layout</b> </a>
+
+                    <a href="#svg"> 09 <b>SVG icons</b> </a>
+
+                    <a href="#challenge"> 10 <b>Mini project</b> </a>
+                </aside>
+
+                <div class="content">
+                    <!-- 01 INLINE -->
+                    <article class="card" id="inline">
+                        <div class="meta">
+                            01 / HTML
+                            <span>INLINE ELEMENTS</span>
+                        </div>
+
+                        <h3>Elements that share a line.</h3>
+
+                        <p>
+                            Inline elements participate in the current text
+                            line. They usually take only the space their content
+                            needs instead of starting a new line.
+                        </p>
+
+                        <div class="example-box">
+                            <small>INLINE EXAMPLE</small>
+
+                            <p>
+                                Read our
+                                <a href="#inline">latest article</a>
+                                <span class="inline-icon">↗</span>
+                                for more information.
+                            </p>
+                        </div>
+
+                        <div class="code">
+                            <header>
+                                HTML
+                                <button data-copy="code1">COPY CODE ↗</button>
+                            </header>
+
+                            <pre id="code1">
+&lt;p&gt;
+    Read our
+    &lt;a href="#"&gt;latest article&lt;/a&gt;
+    &lt;span&gt;↗&lt;/span&gt;
+    for more information.
+&lt;/p&gt;</pre
+                            >
+                        </div>
+
+                        <div class="tip">
+                            ✳
+                            <p>
+                                <b>Remember:</b> Inline elements flow naturally
+                                with surrounding text. Their alignment is
+                                influenced by the text line and font metrics.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 02 BASELINE -->
+                    <article class="card" id="baseline">
+                        <div class="meta">
+                            02 / TYPOGRAPHY
+                            <span>THE BASELINE</span>
+                        </div>
+
+                        <h3>Why does an icon look too low?</h3>
+
+                        <p>
+                            Text characters sit on an invisible baseline. Inline
+                            icons can align to that baseline too, which
+                            sometimes makes an icon appear slightly lower than
+                            the center of the text.
+                        </p>
+
+                        <div class="baseline-demo">
+                            <div class="baseline-item">
+                                <small>DEFAULT BASELINE</small>
+                                <p>
+                                    Message
+                                    <span class="baseline-icon">✦</span>
+                                </p>
+                                <i></i>
+                            </div>
+
+                            <div class="baseline-item centered">
+                                <small>VISUALLY CENTERED</small>
+                                <p>
+                                    Message
+                                    <span class="baseline-icon">✦</span>
+                                </p>
+                                <i></i>
+                            </div>
+                        </div>
+
+                        <div class="code">
+                            <header>
+                                CSS
+                                <button data-copy="code2">COPY CODE ↗</button>
+                            </header>
+
+                            <pre id="code2">
+.icon {
+    vertical-align: middle;
+}</pre
+                            >
+                        </div>
+
+                        <div class="tip">
+                            ✳
+                            <p>
+                                <b>Key idea:</b> Text baseline and visual center
+                                are not the same thing. This is why an icon can
+                                look slightly misaligned.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 03 VERTICAL ALIGN -->
+                    <article class="card" id="vertical">
+                        <div class="meta">
+                            03 / CSS
+                            <span>VERTICAL-ALIGN</span>
+                        </div>
+
+                        <h3>Adjust an inline element.</h3>
+
+                        <p>
+                            The <code>vertical-align</code> property controls
+                            how an inline-level element aligns relative to the
+                            surrounding text line.
+                        </p>
+
+                        <div class="vertical-examples">
+                            <div>
+                                <small>BASELINE</small>
+                                <p>Text <b class="v-icon base">✦</b></p>
+                            </div>
+
+                            <div>
+                                <small>MIDDLE</small>
+                                <p>Text <b class="v-icon middle">✦</b></p>
+                            </div>
+
+                            <div>
+                                <small>SUPER</small>
+                                <p>Text <b class="v-icon super">✦</b></p>
+                            </div>
+                        </div>
+
+                        <div class="code">
+                            <header>
+                                CSS
+                                <button data-copy="code3">COPY CODE ↗</button>
+                            </header>
+
+                            <pre id="code3">
+.icon {
+    vertical-align: middle;
+}
+
+/* Other values */
+.icon {
+    vertical-align: baseline;
+    vertical-align: super;
+    vertical-align: sub;
+}</pre
+                            >
+                        </div>
+                    </article>
+
+                    <!-- 04 FLEXBOX -->
+                    <article class="card" id="flex">
+                        <div class="meta">
+                            04 / CSS
+                            <span>DISPLAY FLEX</span>
+                        </div>
+
+                        <h3>Meet Flexbox.</h3>
+
+                        <p>
+                            Flexbox creates a flexible layout container. Its
+                            direct children become flex items, which can be
+                            aligned and spaced along two axes.
+                        </p>
+
+                        <div class="flex-demo">
+                            <div class="flex-item">ICON</div>
+                            <div class="flex-item">TEXT</div>
+                            <div class="flex-item">BADGE</div>
+                        </div>
+
+                        <div class="code">
+                            <header>
+                                CSS
+                                <button data-copy="code4">COPY CODE ↗</button>
+                            </header>
+
+                            <pre id="code4">
+.container {
+    display: flex;
+}</pre
+                            >
+                        </div>
+
+                        <div class="tip">
+                            ✳
+                            <p>
+                                <b>Remember:</b> Flexbox affects the direct
+                                children of the flex container. Nested elements
+                                need their own layout rules.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 05 ALIGN ITEMS -->
+                    <article class="card" id="center">
+                        <div class="meta">
+                            05 / FLEXBOX
+                            <span>ALIGN-ITEMS</span>
+                        </div>
+
+                        <h3>Bring everything to the center.</h3>
+
+                        <p>
+                            The <code>align-items</code> property controls
+                            alignment on the cross axis. In a row layout, this
+                            is usually the vertical axis.
+                        </p>
+
+                        <div class="alignment-examples">
+                            <div class="align-example start">
+                                <small>FLEX-START</small>
+                                <div class="align-box">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+
+                            <div class="align-example center">
+                                <small>CENTER</small>
+                                <div class="align-box">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+
+                            <div class="align-example end">
+                                <small>FLEX-END</small>
+                                <div class="align-box">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="code">
+                            <header>
+                                CSS
+                                <button data-copy="code5">COPY CODE ↗</button>
+                            </header>
+
+                            <pre id="code5">
+.container {
+    display: flex;
+    align-items: center;
+}</pre
+                            >
+                        </div>
+                    </article>
+
+                    <!-- 06 GAP -->
+                    <article class="card" id="gap">
+                        <div class="meta">
+                            06 / FLEXBOX
+                            <span>GAP AND SPACING</span>
+                        </div>
+
+                        <h3>Space without extra margins.</h3>
+
+                        <p>
+                            The <code>gap</code> property creates consistent
+                            spacing between flex items. It is often simpler than
+                            adding margins to individual children.
+                        </p>
+
+                        <div class="gap-demo">
+                            <div class="gap-row small-gap">
+                                <span>ICON</span><span>TEXT</span>
+                            </div>
+
+                            <div class="gap-row large-gap">
+                                <span>ICON</span><span>TEXT</span>
+                            </div>
+                        </div>
+
+                        <div class="code">
+                            <header>
+                                CSS
+                                <button data-copy="code6">COPY CODE ↗</button>
+                            </header>
+
+                            <pre id="code6">
+.container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}</pre
+                            >
+                        </div>
+                    </article>
+
+                    <!-- 07 FLEX SIZING -->
+                    <article class="card" id="sizing">
+                        <div class="meta">
+                            07 / FLEXBOX
+                            <span>FLEX-SHRINK</span>
+                        </div>
+
+                        <h3>What happens when space gets tight?</h3>
+
+                        <p>
+                            Flex items can shrink when there isn't enough room.
+                            The <code>flex-shrink</code> property controls how
+                            much an item is allowed to shrink.
+                        </p>
+
+                        <div class="sizing-demo">
+                            <div class="sizing-item icon-item">ICON</div>
+                            <div class="sizing-item text-item">
+                                This text area has room to adapt to the
+                                available width.
+                            </div>
+                            <div class="sizing-item badge-item">NEW</div>
+                        </div>
+
+                        <div class="code">
+                            <header>
+                                CSS
+                                <button data-copy="code7">COPY CODE ↗</button>
+                            </header>
+
+                            <pre id="code7">
+.icon,
+.badge {
+    flex-shrink: 0;
+}
+
+.text {
+    flex: 1;
+    min-width: 0;
+}</pre
+                            >
+                        </div>
+
+                        <div class="tip">
+                            ✳
+                            <p>
+                                <b>Practical tip:</b> Use
+                                <code>flex-shrink: 0</code> for icons that
+                                should retain their size when the text becomes
+                                longer.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 08 RESPONSIVE -->
+                    <article class="card" id="responsive">
+                        <div class="meta">
+                            08 / RESPONSIVE
+                            <span>FLEX-WRAP</span>
+                        </div>
+
+                        <h3>Let the layout breathe.</h3>
+
+                        <p>
+                            When items no longer fit in one row,
+                            <code>flex-wrap</code> allows them to move onto
+                            another line instead of overflowing.
+                        </p>
+
+                        <div class="wrap-demo">
+                            <span>DESIGN</span>
+                            <span>DEVELOPMENT</span>
+                            <span>ANIMATION</span>
+                            <span>INTERACTION</span>
+                        </div>
+
+                        <div class="code">
+                            <header>
+                                CSS
+                                <button data-copy="code8">COPY CODE ↗</button>
+                            </header>
+
+                            <pre id="code8">
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}</pre
+                            >
+                        </div>
+                    </article>
+
+                    <!-- 09 SVG -->
+                    <article class="card" id="svg">
+                        <div class="meta">
+                            09 / HTML
+                            <span>SVG ICONS</span>
+                        </div>
+
+                        <h3>Use icons that scale cleanly.</h3>
+
+                        <p>
+                            SVG icons are vector graphics. They remain sharp at
+                            different sizes and can be styled with CSS. Give
+                            decorative icons
+                            <code>aria-hidden="true"</code> and make sure
+                            meaningful icons have an accessible name.
+                        </p>
+
+                        <div class="svg-demo">
+                            <svg
+                                width="28"
+                                height="28"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="M7 17 17 7" />
+                                <path d="M7 7h10v10" />
+                            </svg>
+
+                            <span>Explore the project</span>
+                        </div>
+
+                        <div class="code">
+                            <header>
+                                HTML
+                                <button data-copy="code9">COPY CODE ↗</button>
+                            </header>
+
+                            <pre id="code9">
+&lt;span class="link-icon"&gt;
+    &lt;svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    &gt;
+        &lt;path d="M7 17 17 7" /&gt;
+        &lt;path d="M7 7h10v10" /&gt;
+    &lt;/svg&gt;
+&lt;/span&gt;</pre
+                            >
+                        </div>
+                    </article>
+
+                    <!-- 10 MINI PROJECT -->
+                    <article class="card" id="challenge">
+                        <div class="meta">
+                            10 / PRACTICE
+                            <span>MINI PROJECT</span>
+                        </div>
+
+                        <h3>Build a notification.</h3>
+
+                        <p>
+                            Combine everything you've learned. Create a
+                            notification with an icon, title, description and
+                            status badge. Keep everything aligned, readable and
+                            responsive.
+                        </p>
+
+                        <div class="challenge-preview">
+                            <div class="challenge-icon">
+                                <span>✓</span>
+                            </div>
+
+                            <div class="challenge-copy">
+                                <strong>Project completed</strong>
+                                <span
+                                    >Your new layout is ready to explore.</span
+                                >
+                            </div>
+
+                            <span class="challenge-badge">DONE</span>
+                        </div>
+
+                        <div class="code">
+                            <header>
+                                HTML
+                                <button data-copy="code10">COPY CODE ↗</button>
+                            </header>
+
+                            <pre id="code10">
+&lt;div class="notification"&gt;
+    &lt;span class="icon" aria-hidden="true"&gt;✓&lt;/span&gt;
+
+    &lt;div class="message"&gt;
+        &lt;strong&gt;Project completed&lt;/strong&gt;
+        &lt;p&gt;Your new layout is ready.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;span class="badge"&gt;DONE&lt;/span&gt;
+&lt;/div&gt;</pre
+                            >
+                        </div>
+
+                        <div class="tip">
+                            ✳
+                            <p>
+                                <b>Your challenge:</b> Use Flexbox to align the
+                                icon, message and badge. Make the icon and badge
+                                resist shrinking, and let the message take the
+                                remaining space.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- PLAYGROUND -->
+            <section class="playground" id="playground">
+                <div class="wrap">
+                    <div class="label">02 &nbsp; THE PLAYGROUND</div>
+
+                    <div class="play-head">
+                        <h2>
+                            Make it<br />
+                            <em>sit right.</em>
+                        </h2>
+
+                        <p>
+                            Change alignment, spacing, icon size and layout.
+                            Watch the component update and inspect the CSS
+                            behind it.
+                        </p>
+                    </div>
+
+                    <div class="play-box">
+                        <div class="controls">
+                            <label>ALIGN ITEMS</label>
+
+                            <select id="align">
+                                <option value="center">Center</option>
+                                <option value="flex-start">Flex start</option>
+                                <option value="flex-end">Flex end</option>
+                                <option value="stretch">Stretch</option>
+                            </select>
+
+                            <div class="control">
+                                <label>
+                                    GAP
+                                    <output id="gapValue">14px</output>
+                                </label>
+
+                                <input
+                                    id="gapControl"
+                                    type="range"
+                                    min="0"
+                                    max="40"
+                                    value="14"
+                                />
+                            </div>
+
+                            <div class="control">
+                                <label>
+                                    ICON SIZE
+                                    <output id="iconValue">42px</output>
+                                </label>
+
+                                <input
+                                    id="iconSize"
+                                    type="range"
+                                    min="20"
+                                    max="72"
+                                    value="42"
+                                />
+                            </div>
+
+                            <div class="control">
+                                <label>
+                                    TEXT SIZE
+                                    <output id="textValue">15px</output>
+                                </label>
+
+                                <input
+                                    id="textSize"
+                                    type="range"
+                                    min="10"
+                                    max="28"
+                                    value="15"
+                                />
+                            </div>
+
+                            <label>FLEX DIRECTION</label>
+
+                            <select id="direction">
+                                <option value="row">Row</option>
+                                <option value="column">Column</option>
+                                <option value="row-reverse">Row reverse</option>
+                            </select>
+
+                            <label>ICON SHAPE</label>
+
+                            <select id="iconShape">
+                                <option value="rounded">Rounded</option>
+                                <option value="circle">Circle</option>
+                                <option value="square">Square</option>
+                            </select>
+
+                            <button class="button primary" id="reset">
+                                RESET SETTINGS ↻
+                            </button>
+                        </div>
+
+                        <div class="preview">
+                            <header>
+                                LIVE PREVIEW
+                                <span>● LIVE</span>
+                            </header>
+
+                            <div class="preview-stage">
+                                <div class="preview-component" id="component">
+                                    <div class="preview-icon" id="previewIcon">
+                                        <span>✦</span>
+                                    </div>
+
+                                    <div class="preview-copy">
+                                        <strong>Everything aligned</strong>
+                                        <span>
+                                            A little spacing makes a big
+                                            difference.
+                                        </span>
+                                    </div>
+
+                                    <span class="preview-badge">NEW</span>
+                                </div>
+                            </div>
+
+                            <footer>
+                                CSS FLEXBOX
+                                <span>009 / 1000</span>
+                            </footer>
+                        </div>
+                    </div>
+
+                    <div class="code generated">
+                        <header>
+                            GENERATED CSS
+                            <button data-copy="generated">COPY CSS ↗</button>
+                        </header>
+
+                        <pre id="generated"></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RECAP -->
+            <section class="recap wrap" id="recap">
+                <div class="label">03 &nbsp; QUICK RECAP</div>
+
+                <div class="recap-grid">
+                    <h2>
+                        Little details.<br />
+                        <em>Better layouts.</em>
+                    </h2>
+
+                    <div class="points">
+                        <p>
+                            <b>01</b>
+                            <span>
+                                <strong>Inline elements</strong><br />
+                                Understand how icons sit inside text lines.
+                            </span>
+                        </p>
+
+                        <p>
+                            <b>02</b>
+                            <span>
+                                <strong>vertical-align</strong><br />
+                                Adjust inline-level elements relative to the
+                                text line.
+                            </span>
+                        </p>
+
+                        <p>
+                            <b>03</b>
+                            <span>
+                                <strong>display: flex</strong><br />
+                                Create flexible layouts with aligned items.
+                            </span>
+                        </p>
+
+                        <p>
+                            <b>04</b>
+                            <span>
+                                <strong>align-items + gap</strong><br />
+                                Control alignment and consistent spacing.
+                            </span>
+                        </p>
+
+                        <p>
+                            <b>05</b>
+                            <span>
+                                <strong>flex-shrink + flex-wrap</strong><br />
+                                Build layouts that adapt to available space.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="next">
+                    <small>NEXT UP / 010</small>
+                    <h3>Text shadow effects</h3>
+                    <span>↗</span>
+                </div>
+
+                <footer class="footer">
+                    <a class="brand" href="#top">
+                        <span class="brand-icon">A<span>/</span></span>
+                        ALIGNMENT LAB
+                    </a>
+
+                    <small>MADE FOR CURIOUS MINDS · 2026</small>
+
+                    <a href="#top">BACK TO TOP ↑</a>
+                </footer>
+            </section>
+        </main>
+
+        <script src="./assets/js/main.js"></script>
+    </body>
 </html>
